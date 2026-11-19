@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioPredict — Sign in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/app/login.css" />
+</head>
+<body>
+  <div class="split">
+    <!-- Left: image showcase -->
+    <section class="showcase">
+      <div class="showcase-card">
+        <img alt="" aria-hidden="true" class="showcase-img"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe8drXpZdylYrBAbfhelQDO9pToCPlD-14qQBygzx3Gmckupdbgp7aYgrtGKKzkfp8DNSe0da2PzjBBB3gfwj9pAVT9KHfBKpz7o-FrqovzDYWJWXfeBDHUHLH3ntmOwtUZs-hh7wqVkesHmkOipUccB463vQJxq_Xywgle4_GcXG-kqppof24jek0XqUzs_6e4vdkJQvMADIFGXGA9ZvhaRqqZxcqEoPwiuj7L-Byb8QgmbbNO1oyeQ"
+             onerror="this.remove()" />
+        <div class="showcase-shade"></div>
+      </div>
+    </section>
+
+    <!-- Right: auth panel -->
+    <section class="panel">
+      <div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+      <div class="topbar">
+        <div class="pill pill-blue" id="modelPill"><svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg><span id="modelPillText">Checking model…</span></div>
+        <a class="pill pill-orange" href="/docs" target="_blank" rel="noopener">🔗 API Docs</a>
+      </div>
+
+      <main class="center">
+        <h1 class="brand">BioPredict</h1>
+
+        <div class="card">
+          <div class="card-head">
+            <h2 id="formTitle">Log In</h2>
+            <button type="button" class="link-btn" id="modeToggle">Sign Up</button>
+          </div>
+
+          <form id="authForm" novalidate>
+            <label for="email">Your email</label>
+            <input id="email" name="email" type="email" autocomplete="username" placeholder="researcher@biopredict.co" required />
+
+            <label for="password">Your password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••••••" required minlength="8" />
+
+            <div id="confirmWrap" hidden>
+              <label for="confirm">Confirm password</label>
+              <input id="confirm" name="confirm" type="password" autocomplete="new-password" placeholder="••••••••••••" />
+            </div>
+
+            <p class="error" id="error" role="alert" hidden></p>
+
+            <button class="submit" id="submitBtn" type="submit">Log In</button>
+          </form>
+        </div>
+      </main>
+
+      <footer>
+        <span>© BioPredict 2026</span>
+        <span class="links"><a href="#">Terms of use</a><a href="#">Privacy Policy</a></span>
+      </footer>
+    </section>
+  </div>
+  <script src="/app/login.js"></script>
+</body>
+</html>

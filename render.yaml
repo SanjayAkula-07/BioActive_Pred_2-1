@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: biopredict
+    runtime: python
+    rootDir: version 2
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips='*'
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION      # the shipped .pyc was compiled with Python 3.14
+        value: 3.14.0
+      - key: SUPABASE_URL
+        value: https://xvbsnublyudellvkrriq.supabase.co
+      - key: SUPABASE_ANON_KEY
+        sync: false              # paste in the Render dashboard
+      - key: BIOPREDICT_SECRET
+        generateValue: true
